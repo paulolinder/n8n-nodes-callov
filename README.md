@@ -1,157 +1,157 @@
 # n8n-nodes-callov
 
-Node n8n para integração completa com a API Callov - Sistema de Gerenciamento de Agendamentos, Clientes, Serviços e Profissionais.
+n8n node for complete integration with the Callov API - Appointment Scheduling, Clients, Services, and Team Members Management System.
 
-## 🚀 Instalação
+## Installation
 
-### Via npm (Recomendado)
+### Via npm (Recommended)
 
 ```bash
 npm install n8n-nodes-callov
 ```
 
-### Via interface do n8n
+### Via n8n interface
 
-1. Vá em **Settings** → **Community Nodes**
-2. Digite: `n8n-nodes-callov`
-3. Clique em **Install**
-4. Reinicie o n8n
+1. Go to **Settings** → **Community Nodes**
+2. Type: `n8n-nodes-callov`
+3. Click **Install**
+4. Restart n8n
 
-## 🔐 Configuração
+## Configuration
 
-1. No n8n, vá em **Credentials** → **New**
-2. Procure por **Callov API**
-3. Insira sua API Key (disponível em Configurações → API no Callov)
-4. Teste a conexão
+1. In n8n, go to **Credentials** → **New**
+2. Search for **Callov API**
+3. Enter your API Key (available in Settings → API in Callov)
+4. Test the connection
 
-## 📋 Recursos Disponíveis
+## Available Resources
 
-### 📅 Appointments (Agendamentos)
+### Appointments
 
-- **Create**: Criar novo agendamento com dropdowns dinâmicos
-- **Get**: Buscar agendamento por ID
-- **Get Many**: Listar agendamentos com filtros avançados
-- **Get Availability**: Verificar horários disponíveis de um profissional
-- **Update**: Atualizar status, horários e notas
-- **Delete**: Cancelar agendamento
+- **Create**: Create new appointment with dynamic dropdowns
+- **Get**: Fetch appointment by ID
+- **Get Many**: List appointments with advanced filters
+- **Get Availability**: Check available time slots for a team member
+- **Update**: Update status, times, and notes
+- **Delete**: Cancel appointment
 
-### 👥 Clients (Clientes)
+### Clients
 
-- **Create**: Criar novo cliente com dados completos
-- **Get Many**: Listar clientes com busca por nome, email ou telefone
+- **Create**: Create new client with complete data
+- **Get Many**: List clients with search by name, email, or phone
 
-### 🛠️ Services (Serviços)
+### Services
 
-- **Create**: Criar serviço com preço, duração e profissionais associados
-- **Get**: Buscar serviço específico
-- **Get Many**: Listar serviços com filtros por categoria e profissional
-- **Update**: Atualizar informações do serviço
-- **Delete**: Remover serviço
+- **Create**: Create service with price, duration, and associated team members
+- **Get**: Fetch specific service
+- **Get Many**: List services with filters by category and team member
+- **Update**: Update service information
+- **Delete**: Remove service
 
-### 👨‍💼 Team Members (Profissionais)
+### Team Members
 
-- **Get**: Buscar profissional por ID
-- **Get Many**: Listar profissionais ativos com filtros
+- **Get**: Fetch team member by ID
+- **Get Many**: List active team members with filters
 
-## ✨ Recursos Especiais
+## Special Features
 
-### 🎯 Dropdowns Dinâmicos
+### Dynamic Dropdowns
 
-Ao criar agendamentos, os campos são preenchidos automaticamente:
-- **Client**: Lista todos os clientes cadastrados
-- **Service**: Mostra serviços com duração e preço
-- **Team Member**: Lista profissionais ativos com especialidade
+When creating appointments, fields are automatically populated:
+- **Client**: Lists all registered clients
+- **Service**: Shows services with duration and price
+- **Team Member**: Lists active team members with specialty
 
-### 🤖 Suporte para AI Agents
+### AI Agent Support
 
-Este node pode ser usado como **Tool** para agentes de IA (OpenAI, Anthropic, etc.):
-- Agentes podem criar agendamentos automaticamente
-- Verificar disponibilidade de horários
-- Buscar informações de clientes e serviços
-- Gerenciar todo o sistema via linguagem natural
+This node can be used as a **Tool** for AI agents (OpenAI, Anthropic, etc.):
+- Agents can automatically create appointments
+- Check time slot availability
+- Fetch client and service information
+- Manage the entire system via natural language
 
-## 📖 Exemplos de Uso
+## Usage Examples
 
-### Criar um Agendamento
+### Create an Appointment
 
 ```
-1. Adicione o node Callov
+1. Add the Callov node
 2. Resource: Appointment
 3. Operation: Create
-4. Selecione Client, Service e Team Member nos dropdowns
-5. Defina Start Time e End Time
+4. Select Client, Service, and Team Member from dropdowns
+5. Set Start Time and End Time
 6. Execute!
 ```
 
-### Verificar Disponibilidade
+### Check Availability
 
 ```
 1. Resource: Appointment
 2. Operation: Get Availability
-3. Selecione Team Member
-4. Escolha a Data
-5. Defina Duration Minutes (padrão: 30)
-6. Retorna todos os horários livres
+3. Select Team Member
+4. Choose the Date
+5. Set Duration Minutes (default: 30)
+6. Returns all available time slots
 ```
 
-### Criar Serviço com Profissionais
+### Create Service with Team Members
 
 ```
 1. Resource: Service
 2. Operation: Create
-3. Name: "Corte de Cabelo"
-4. Duration: 30 minutos
+3. Name: "Haircut"
+4. Duration: 30 minutes
 5. Price: "50.00"
-6. Team Member IDs: Selecione múltiplos profissionais
+6. Team Member IDs: Select multiple team members
 ```
 
-### Usar com AI Agent
+### Use with AI Agent
 
 ```
-1. Adicione um node AI Agent (OpenAI, Anthropic, etc.)
-2. Conecte o node Callov como Tool
-3. O agente pode executar comandos como:
-   - "Agende um corte de cabelo para João amanhã às 14h"
-   - "Quais horários estão disponíveis hoje?"
-   - "Liste todos os serviços de manicure"
+1. Add an AI Agent node (OpenAI, Anthropic, etc.)
+2. Connect the Callov node as a Tool
+3. The agent can execute commands like:
+   - "Schedule a haircut for John tomorrow at 2pm"
+   - "What time slots are available today?"
+   - "List all manicure services"
 ```
 
-## 🔧 Requisitos
+## Requirements
 
-- API Key válida do Callov
-- Plano Professional ou Enterprise (requisito da API Callov)
-- n8n versão 1.0.0 ou superior
+- Valid Callov API Key
+- Professional or Enterprise plan (Callov API requirement)
+- n8n version 1.0.0 or higher
 
-## 📚 Documentação da API
+## API Documentation
 
-Para mais detalhes sobre os endpoints e parâmetros, consulte a documentação oficial da API Callov.
+For more details about endpoints and parameters, refer to the official Callov API documentation.
 
-## 🐛 Suporte
+## Support
 
-Para problemas ou dúvidas:
-- Issues: https://github.com/lossautomacoes/n8n-nodes-callov/issues
-- API Callov: Entre em contato com o suporte oficial
+For issues or questions:
+- Issues: https://github.com/paulolinder/n8n-nodes-callov/issues
+- Callov API: Contact official support
 
-## 📝 Changelog
+## Changelog
 
-### v1.4.0
-- ✅ Adicionado recurso completo de Services (CRUD)
-- ✅ Suporte para AI Agent Tools
-- ✅ Dropdowns dinâmicos para todos os recursos
+### v1.7.0
+- Added complete Services resource (CRUD)
+- AI Agent Tools support
+- Dynamic dropdowns for all resources
 
 ### v1.3.0
-- ✅ Dropdowns dinâmicos para Client, Service e Team Member
-- ✅ Melhorias na UX
+- Dynamic dropdowns for Client, Service, and Team Member
+- UX improvements
 
 ### v1.2.0
-- ✅ Adicionado recurso Team Members
+- Added Team Members resource
 
 ### v1.1.0
-- ✅ Adicionado Get Availability
+- Added Get Availability
 
 ### v1.0.0
-- ✅ Lançamento inicial com Appointments e Clients
+- Initial release with Appointments and Clients
 
-## 📄 Licença
+## License
 
 MIT
