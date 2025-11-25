@@ -1,0 +1,26 @@
+# Source files
+nodes/**/*.ts
+credentials/**/*.ts
+!dist/**
+
+# Config files
+tsconfig.json
+.eslintrc.js
+gulpfile.js
+
+# Development
+node_modules/
+*.log
+.DS_Store
+.env
+
+# Git
+.git/
+.gitignore
+
+# Documentation (keep README.md)
+install-instructions.txt
+
+# IDE
+.vscode/
+.idea/

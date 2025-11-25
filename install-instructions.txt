@@ -1,0 +1,45 @@
+INSTRUÇÕES PARA INSTALAR O NODE CALLOV NO N8N
+==============================================
+
+OPÇÃO 1: Instalação via caminho local
+--------------------------------------
+No diretório do seu n8n, execute:
+
+npm install C:\Users\Usuario\NodesN8N
+
+Depois reinicie o n8n.
+
+
+OPÇÃO 2: Usando variável de ambiente (RECOMENDADO)
+---------------------------------------------------
+1. No diretório do n8n, crie/edite o arquivo .env
+
+2. Adicione esta linha:
+N8N_CUSTOM_EXTENSIONS=C:\Users\Usuario\NodesN8N
+
+3. Reinicie o n8n com:
+n8n start
+
+4. O node Callov aparecerá automaticamente na lista de nodes
+
+
+OPÇÃO 3: Copiar para pasta global do n8n
+-----------------------------------------
+1. Localize a pasta de nodes customizados do n8n:
+   Windows: C:\Users\Usuario\.n8n\custom
+
+2. Crie a pasta se não existir:
+   mkdir C:\Users\Usuario\.n8n\custom
+
+3. Copie todo o conteúdo de C:\Users\Usuario\NodesN8N para lá
+
+4. Reinicie o n8n
+
+
+VERIFICAR SE FUNCIONOU
+----------------------
+1. Abra o n8n
+2. Crie um novo workflow
+3. Clique em "Add node"
+4. Procure por "Callov"
+5. O node deve aparecer com o ícone do calendário roxo/azul

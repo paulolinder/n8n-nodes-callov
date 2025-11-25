@@ -1,0 +1,57 @@
+{
+  "name": "n8n-nodes-callov",
+  "version": "1.7.0",
+  "description": "n8n node for Callov API - Complete Management System with AI Agent Support",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "callov",
+    "appointments",
+    "scheduling",
+    "calendar",
+    "booking"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/paulolinder/n8n-nodes-callov",
+  "author": {
+    "name": "Loss Automações",
+    "email": "paulolinder@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulolinder/n8n-nodes-callov.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/CallovApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Callov/Callov.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-n8n-nodes-base": "^1.11.0",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "^1.0.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
